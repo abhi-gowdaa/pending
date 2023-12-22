@@ -1,6 +1,7 @@
+const User=require('../../models/user')
 
-const postRegister=(req,res)=>{
-    res.send('Register Router');
+const postRegister=async (req,res)=>{
+     res.send('Register route') 
 };
 
 module.exports=postRegister;
