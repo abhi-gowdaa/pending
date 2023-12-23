@@ -13,12 +13,12 @@ const registerSchema=Joi.object({
     mail:Joi.string().email().required(),
 
 
-})
+});
 
 const loginSchema=Joi.object({
     mail:Joi.string().email().required(),
-    password:Joi.string().min(6).max(12).required(),
-})
+    password:Joi.string().min(6).max(12).required()
+});
 
 
 
@@ -26,7 +26,7 @@ const loginSchema=Joi.object({
 router.post('/register' ,validator.body(registerSchema), authControllers.controllers.postRegister);
 
 
-router.post('/login',validator.body(loginSchema),authControllers.controllers.postLogin)
+router.post('/login',validator.body(loginSchema),authControllers.controllers.postLogin);
 
 
 
