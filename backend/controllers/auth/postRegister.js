@@ -32,7 +32,9 @@ const user=await User.create({
       userId: user._id,
       mail,
     },
-    config.TOKEN_KEY
+    config.TOKEN_KEY ,{
+        expiresIn:"24h"
+    }
   );;
 
 res.status(200).json({

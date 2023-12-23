@@ -19,7 +19,9 @@ const postLogin = async (req, res) => {
         userId: user._id,
           mail,
         },
-        config.TOKEN_KEY
+        config.TOKEN_KEY ,{
+            expiresIn:"24h"
+        }
       );
 
       return res.status(200).json({
