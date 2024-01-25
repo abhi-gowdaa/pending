@@ -25,6 +25,9 @@ router.post(
   authControllers.controllers.postRegister
 );
 
+//validator.body middleware automatically uses the data in req.body 
+//and validates it against the provided schema.
+
 router.post(
   "/login",
   validator.body(loginSchema),

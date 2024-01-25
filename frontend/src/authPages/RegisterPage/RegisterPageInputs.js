@@ -1,8 +1,8 @@
-import React from "react";
+ import React from "react";
 import { InputWithLabel } from "../../shared/components/InputWithLabel";
 
-export const LoginPageInputs = (props) => {
-  const { mail, setMail, password, setPassword } = props;
+export const RegisterPageInputs = (props) => {
+  const { mail, setMail, username, setUsername, password, setPassword } = props;
 
   return (
     <>
@@ -14,7 +14,14 @@ export const LoginPageInputs = (props) => {
         palceholder="Enter e-mail address"
       />
 
-      
+      <InputWithLabel
+        value={username}
+        setValue={setUsername}
+        label="Username"
+        type="text"
+        palceholder="Enter username"
+      />
+
       <InputWithLabel
         value={password}
         setValue={setPassword}

@@ -1,6 +1,5 @@
-import styled from '@emotion/styled'
-import React from 'react'
-
+import styled from '@emotion/styled';
+import React from 'react';
 
 const Wrapper = styled('div')({
    
@@ -37,21 +36,19 @@ const Input = styled('input')({
 
 export const InputWithLabel = (props) => {
 
-    const {value , setValue , label ,type , placeHolder}=props;
+    const { value, setValue, label, type, placeholder } = props;
 
-    const handleValueChange=(event)=>{
-
-        setValue(event.target.value)
-
-    }
-
+    const handleValueChange = (event) => {
+      setValue(event.target.value);
+    };
+ 
   return (
     <Wrapper>
         <Label>{label}</Label>
         <Input 
         value={value}
         type={type}
-        placeholder={placeHolder}
+        placeholder={placeholder}
         onChange={handleValueChange}
         />
     </Wrapper>
