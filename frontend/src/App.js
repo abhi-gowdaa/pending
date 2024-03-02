@@ -7,6 +7,7 @@ import "./App.css";
 import  LoginPage from "./authPages/LoginPage/LoginPage";
 import  RegisterPage  from "./authPages/RegisterPage/RegisterPage";
 import { Dashboard } from "./Dashboard/Dashboard";
+import AlertNotification  from "./shared/components/AlertNotification";
 
 function App() {
   const routes = createBrowserRouter([
@@ -16,7 +17,10 @@ function App() {
     { path: "/", element: <Navigate to="/dashboard" /> },
   ]);
 
-  return <RouterProvider router={routes} />;
+  return <>
+   <RouterProvider router={routes} />;
+   <AlertNotification/>
+  </>
 }
 
 export default App;

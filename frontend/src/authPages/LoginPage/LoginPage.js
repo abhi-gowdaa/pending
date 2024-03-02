@@ -25,7 +25,7 @@ const LoginPage = ({login}) => {
       mail,
       password,
     };
-    login(userDetails,navigate)
+    login(userDetails,navigate);
   };
 
   return (

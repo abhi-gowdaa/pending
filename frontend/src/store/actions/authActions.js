@@ -1,4 +1,5 @@
 import * as api from "../../api";
+import { openAlertMessage } from "./alertActions";
 
 export const authActions = {
   SET_USER_DETAILS: "AUTH.SET_USER_DETAILS",
@@ -13,6 +14,8 @@ export const getActions = (dispatch) => {
   };
 };
 
+
+// returns content =>dispatch(setUserDetails(userDetails))===dispatch(type: authActions.SET_USER_DETAILS,userDetails)
 const setUserDetails = (userDetails) => {
   return {
     type: authActions.SET_USER_DETAILS,
@@ -26,7 +29,9 @@ const login = (userDetails, navigate) => {
     console.log(response);
 
     if (response.error) {
-        console.log("error");
+      dispatch(openAlertMessage(response?.exception?.response?.data));
+      console.log(response?.exception?.response?.data);
+        //console.log("error");
     } else {
         const { userDetails } = response?.data;
         localStorage.setItem("user", JSON.stringify(userDetails));
@@ -45,14 +50,14 @@ const register = (userDetails, navigate) => {
 
 
     if (response.error) {
-      console.log("error");
+      dispatch(openAlertMessage(response?.exception?.response?.data));
     } else {
       const { userDetails } = response?.data;
       localStorage.setItem("user", JSON.stringify(userDetails));
-    
-    
-    dispatch(setUserDetails(userDetails));
-    navigate("/dashboard");
+      
+      
+      dispatch(setUserDetails(userDetails));
+      navigate("/dashboard");
     };
   };
 };

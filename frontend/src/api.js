@@ -1,9 +1,26 @@
 import axios from "axios";
+import { logout } from "./shared/utils/auth";
 
+// Now all requests using this instance will wait 1.0 seconds before timing out
 const apiClient = axios.create({
   baseURL: "http://localhost:5002/api",
   timeout: 1000,
 });
+
+
+apiClient.interceptors.request.use((config)=>{
+const userDetails=localStorage.getItem("user");
+if(userDetails){
+  const token=JSON.parse(userDetails);
+  config.headers.Authorization=`Bearer ${token}`;
+
+}
+return config;
+},(err)=>{
+ return Promise.reject(err);
+}
+);
+
 
 export const login = async (data) => {
   try {
@@ -26,3 +43,10 @@ export const register = async (data) => {
     };
   }
 };
+
+const checkResponseCode=(exception)=>{
+  const responseCode=exception?.response?.status;
+  if(responseCode){
+    (responseCode===401|| responseCode===403) &&logout();
+  }
+}
