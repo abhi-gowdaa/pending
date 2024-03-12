@@ -49,4 +49,4 @@ const checkResponseCode=(exception)=>{
   if(responseCode){
     (responseCode===401|| responseCode===403) &&logout();
   }
-}
+};

@@ -1,22 +1,25 @@
-import React from 'react'
- 
-import { styled } from '@mui/material';
+import React  from "react";
+import { styled } from "@mui/system";
+import SideBar from "./SideBar/SideBar";
+import FriendsSideBar from "./FriendsSideBar/FriendsSideBar";
+import Messenger from "./Messenger/Messenger";
+import AppBar from "./AppBar/AppBar";
 
-const Wrapper=styled("div")({
-  height:'100%' ,
-  width:'100%' ,
-  display:'flex'
-
+const Wrapper = styled("div")({
+  height: "100vh",
+  width: "100%",
+  display: "flex",
 });
 
-export const Dashboard = () => {
+const Dashboard = () => {
   return (
     <Wrapper>
-      <SideBar/>
-      <FriendsSideBar/>
-      <Messenger/>
-      <AppBar/>
- 
+      <SideBar />
+      <FriendsSideBar />
+      <Messenger />
+      <AppBar />
     </Wrapper>
-  )
+  );
 };
+
+export default Dashboard;

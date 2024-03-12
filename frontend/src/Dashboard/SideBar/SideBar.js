@@ -1,10 +1,23 @@
-import React from 'react'
-import {styled} from "@mui/material";
- 
+import React from "react";
+import { styled } from "@mui/system";
+import MainPageButton from "./MainPageButton";
 
-export const SideBar = () => {
+const MainContainer = styled("div")({
+  width: "72px",
+  height: "100%",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  backgroundColor: "#202225",
+ 
+});
+
+const SideBar = () => {
   return (
-    <div>SideBar</div>
-    
-  )
-}
+    <MainContainer>
+      <MainPageButton />
+    </MainContainer>
+  );
+};
+
+export default SideBar;

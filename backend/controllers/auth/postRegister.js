@@ -35,7 +35,7 @@ const user=await User.create({
     config.TOKEN_KEY ,{
         expiresIn:"24h"
     }
-  );;
+  );
 
 res.status(200).json({
     userDetails:{
