@@ -47,6 +47,11 @@ const AddFriendDialog = ({
     label="invite"
    onClick={handleSendInvitation}
    disabled={!isFormValid}
+   additionalStyles={{
+    width:"90%",
+    margin:"auto",
+    marginBottom:"20px",
+   }}
 
     />
     </Dialog>

@@ -11,6 +11,7 @@ export const getActions = (dispatch) => {
     login: (userDetails, navigate) => dispatch(login(userDetails, navigate)),
     register: (userDetails, navigate) =>
       dispatch(register(userDetails, navigate)),
+    setUserDetails:(userDetails)=>dispatch(setUserDetails(userDetails)) //execute 20 line it passess (have same name but different func,thisn is thunk that is just object func)
   };
 };
 
