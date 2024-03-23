@@ -4,6 +4,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const authRoutes = require("./routes/authRoutes");
+const  SocketServer  = require("./socketServer");
 
 const PORT = process.env.PORT || process.env.API_PORT;
 
@@ -19,8 +20,10 @@ app.get("/apii", (req, res) => {
 
 
 
-
 const server = http.createServer(app);
+SocketServer.registerSocketServer(server);
+
+
 
 main().catch((err) => console.log(err));
 

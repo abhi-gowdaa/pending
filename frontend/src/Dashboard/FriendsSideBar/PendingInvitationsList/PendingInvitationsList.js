@@ -19,7 +19,7 @@ const dummy_invitation = [
   },
 ];
 
-const MainContainer = styled("dev")({
+const MainContainer = styled("div")({
   width: "100%",
   height: "22%",
   display: "flex",

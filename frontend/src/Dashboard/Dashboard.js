@@ -8,6 +8,8 @@ import { connect } from "react-redux";
 import { getActions } from "../store/actions/authActions";
 import { logout } from "../shared/utils/auth";
 
+import {connectWithSocketServer} from "../realtimeCommunication/socketConnection"
+
 const Wrapper = styled("div")({
   height: "100vh",
   width: "100%",
@@ -16,16 +18,18 @@ const Wrapper = styled("div")({
 
 const Dashboard = ({ setUserDetails }) => {
   useEffect(() => {
-    const token = localStorage.getItem("user");
-    if (!token) {
+    const userDetails = localStorage.getItem("user");
+    if (!userDetails) {
       logout();
     } else {
-      setUserDetails(JSON.parse(token));
+      setUserDetails(JSON.parse(userDetails));
+      connectWithSocketServer();
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
+    
     <Wrapper>
       <SideBar />
       <FriendsSideBar />

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { validateMail } from "./../../shared/utils/Validators";
-import { Button, Dialog, DialogActions, DialogContentText, DialogTitle, DialogContent, Typography } from "@mui/material";
+import { Dialog,  DialogTitle, DialogContent, Typography } from "@mui/material";
 import CustomPrimaryButton from './../../shared/components/CustomPrimaryButton';
 import { InputWithLabel } from './../../shared/components/InputWithLabel';
 
@@ -27,7 +27,7 @@ const AddFriendDialog = ({
 
   return <div>
     <Dialog open={isDialogOpen}
-    onClose={closeDialogHandler}
+    onClose={handleCloseDialog}
     >
    <DialogTitle>
     <Typography>Invite a Friend</Typography>
