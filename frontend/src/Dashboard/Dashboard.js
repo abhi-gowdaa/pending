@@ -19,11 +19,14 @@ const Wrapper = styled("div")({
 const Dashboard = ({ setUserDetails }) => {
   useEffect(() => {
     const userDetails = localStorage.getItem("user");
-    if (!userDetails) {
+    //const tokenExpiration = localStorage.getItem("tokenExpiration");
+
+    // if (!userDetails || !tokenExpiration || Date.now() > tokenExpiration) {
+     if (!userDetails) {
       logout();
     } else {
       setUserDetails(JSON.parse(userDetails));
-      connectWithSocketServer();
+      connectWithSocketServer(JSON.parse(userDetails));
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

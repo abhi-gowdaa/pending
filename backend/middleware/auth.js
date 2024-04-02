@@ -12,7 +12,7 @@ const verifyToken = (req, res, next) => {
     token = token.replace(/^Bearer\s+/, ""); //to remove bearer(header)
 
     const decoded = jwt.verify(token, config.TOKEN_KEY);
-    req.user = decoded;
+    req.user = decoded; //we combine decode(token) to all the requests from user
   } 
   catch (err) {
     return res.status(401).send(" invalid token");
