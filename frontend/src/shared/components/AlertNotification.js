@@ -4,6 +4,9 @@ import Snackbar from "@mui/material/Snackbar";
 import { connect } from "react-redux";
 import { getActions } from "../../store/actions/alertActions";
 
+
+//execute automaticllly when showalertmessage in alertReducer becomes true
+
 export const AlertNotification = ({
   showAlertMessage,
   closeAlertMessage,

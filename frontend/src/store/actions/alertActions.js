@@ -1,5 +1,7 @@
 //TYPE OF ACTION
 
+// this execute in the app.js  
+
 const alertActions = {
   OPEN_ALERT_MESSAGE: "ALERT.OPEN_ALERT_MESSAGE",
   CLOSE_ALERT_MESSAGE: "ALERT.CLOSE_ALERT_MESSAGE",
