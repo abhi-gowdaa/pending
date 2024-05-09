@@ -18,8 +18,10 @@ const AddFriendDialog = ({
   const handleSendInvitation = () => {
     //send frieend request to server
     sendFriendInvitation({
-      mail:mail,
-    });
+      targetMail:mail,
+    },
+    handleCloseDialog
+  );
 
   };
 
